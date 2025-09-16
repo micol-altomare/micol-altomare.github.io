@@ -23,3 +23,6 @@ Credit: this repo is cloned from https://github.com/varadbhogayata/varadbhogayat
 ![Activity 4 Homepage Screenshot](./readme_images/activity4h.png)
 
 ### Activity 5
+![Activity 5 Repo Screenshot](./readme_images/activity5r.png)
+
+![Activity 5 Homepage Screenshot](./readme_images/activity5h.png)
