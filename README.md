@@ -5,3 +5,9 @@ Credit: this repo is cloned from https://github.com/varadbhogayata/varadbhogayat
 
 ### Activity 1
 ![Activity 1 screenshot](./readme_images/activity1.png)
+
+### Activity 2
+![Activity 2 Homepage Screenshot](./readme_images/activity2h.png)
+
+![Activity 2 Repo Screenshot](./readme_images/activity2r.png)
+
