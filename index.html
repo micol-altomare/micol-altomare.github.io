@@ -541,6 +541,23 @@ achieving 30% accuracy.</li>
       </div>
     </section>
 
+    <!-- Activity 5: Recent Projects-->
+     <!-- Recent Projects Section -->
+<section id="recent-projects" class="section scrollspy">
+  <h3 class="page-title white-text teal">Recent Projects</h3>
+  <div class="container">
+    <div id="recent-projects-container" class="row">
+      <!-- Projects here -->
+    </div>
+    <div class="center-align">
+      <button id="load-more-btn" class="btn waves-effect waves-light teal">Load More</button>
+    </div>
+  </div>
+</section>
+
+
+    
+
     <!-- Fifth Section: Skills -->
     <section id="skills" class="section scrollspy">
       <h3 class="page-title white-text teal">Skills</h3>
@@ -755,6 +772,74 @@ achieving 30% accuracy.</li>
       })
     })
   </script>
+  
+  <script>
+  const projects = [
+    
+    {
+      title: "Happy Hours App",
+      description: "NLP-powered event planning app built in 36 hours at Hack the North.",
+      image: "/assets/img/gan.jpg",
+      link: "https://github.com/EfeTascioglu/Happy-Hours-Hack-The-North-2022"
+    },
+    {
+      title: "Heart Disease Model",
+      description: "Logistic regression model detecting key cardiovascular indicators.",
+      image: "/assets/img/project-aim_bert-bias.png",
+      link: "https://github.com/micol-altomare/Heart-Disease-Model"
+    },
+    {
+      title: "Protein Degradation Model",
+      description: "Designed a deep learning model to predict protein degradation rates using PyTorch.",
+      image: "/assets/img/Blog-Images-Forget-Machine-Learning-Humans-Still-Have-a-Lot-to-Learn-Part-II.jpg",
+      link: "https://github.com/micol-altomare/protein-degradation-model"
+    }
+  ];
+
+  let loadedCount = 0;
+  const loadStep = 1; 
+  const container = document.getElementById("recent-projects-container");
+  const loadMoreBtn = document.getElementById("load-more-btn");
+
+  function renderProjects() {
+    const nextProjects = projects.slice(loadedCount, loadedCount + loadStep);
+    nextProjects.forEach(p => {
+      const card = document.createElement("div");
+      card.className = "col s12 m6 l4";
+      card.innerHTML = `
+        <div class="card medium">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img src="${p.image}" alt="${p.title}" style="height: 100%; width: 100%" />
+          </div>
+          <div class="card-content">
+            <span class="card-title teal-text">${p.title}</span>
+            <p>${p.description}</p>
+          </div>
+          <div class="card-action">
+            <a href="${p.link}" target="_blank">View Project</a>
+          </div>
+        </div>
+      `;
+      container.appendChild(card);
+    });
+    loadedCount += loadStep;
+
+    if (loadedCount >= projects.length) {
+      loadMoreBtn.style.display = "none"; 
+    }
+  }
+
+  // Load the first project on page load
+  document.addEventListener("DOMContentLoaded", () => {
+    renderProjects();
+  });
+
+  // Load more when button clicked
+  loadMoreBtn.addEventListener("click", renderProjects);
+</script>
+
+
+
 </body>
 
 </html>
